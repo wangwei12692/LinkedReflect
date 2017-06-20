@@ -39,6 +39,9 @@ public class LinkedReflect {
         mClazz = clazz;
     }
 
+    private static void parent() {
+        mClazz = mClazz.getSuperclass();
+    }
 
     private static void field(String name) {
         Field field = null;
@@ -106,9 +109,9 @@ public class LinkedReflect {
         value.obj = (T) mObj;
     }
 
+
     private static Object get() {
         Object temp = mObj;
-        //clear
         clear();
         return temp;
     }
@@ -156,12 +159,16 @@ public class LinkedReflect {
         }
 
         public Builder method(String name) {
-            LinkedReflect.method(name, null);
+            LinkedReflect.method(name);
             return this;
         }
 
         public <T> Builder peek(Value<T> value) {
             LinkedReflect.peek(value);
+            return this;
+        }
+        public <T> Builder parent() {
+            LinkedReflect.parent();
             return this;
         }
 

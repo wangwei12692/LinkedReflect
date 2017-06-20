@@ -18,6 +18,7 @@
 
    //mPerson.rentCar(int,Driver).driving(Integer,Driver).mSpeed
     LinkedReflect.with(obj)
+					.parnt()//父类的私有字段
                     .field("mPerson")
                     .method("rentCar", 80, mDriver) //getCar(int,Driver)
                     //参数存在基本类型的包装类型时 应使用下面的方法 flying(Integer,Driver)
