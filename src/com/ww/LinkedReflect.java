@@ -43,6 +43,10 @@ public class LinkedReflect {
         mClazz = mClazz.getSuperclass();
     }
 
+    private static void assertNotNull() {
+        assert mObj != null;
+    }
+
     private static void field(String name) {
         Field field = null;
         try {
@@ -169,6 +173,10 @@ public class LinkedReflect {
         }
         public <T> Builder parent() {
             LinkedReflect.parent();
+            return this;
+        }
+        public <T> Builder assertNotNull() {
+            LinkedReflect.assertNotNull();
             return this;
         }
 
